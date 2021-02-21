@@ -39,8 +39,10 @@ section h2 {
     padding: 30px 60px 60px 60px;
     margin: 60px 60px 60px 0px;
     width: 75%;
+    clip-path: polygon(75% 0%, 90% 50%, 75% 100%, 0% 100%, 0 50%, 0% 0%);
 }
 .question h3 {
+    width: 75%;
     font-size: 130%;
     padding-bottom: 5px;
     border-bottom: 3px solid;

@@ -33,28 +33,28 @@ section h2 {
     width: 15%;
     font-family: fantasy;
 }
-.startdiv {
+.start {
+    display: block;
     border: 15px solid;
     border-color: #EEFBFB;
     background-color: #4da8da;
     padding: 60px 60px 60px 60px;
     margin: 60px 60px 60px 60px;
     width: 75%;
-}
-.startdiv:hover {
-    border-color: #12232E;
-}
-.start {
-    border: none;
     background-color: #4da8da;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
     text-align: center;
-    width: 100%;
-    height: 100%;
     font-size: 500%;
 }
+.start:hover {
+    border-color: #12232E;
+}
+.questionheader {
+    display: none;
+}
 .question {
+    display: none;
     border: 15px solid;
     border-color: #EEFBFB;
     background-color: #4da8da;
@@ -70,4 +70,19 @@ section h2 {
     border-bottom: 3px solid;
     border-color: #203647;
     margin-bottom: 20px;
+}
+.next {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 200%;
+    background-color: #12232E;
+    border: 7px solid;
+    border-color: #12232E;
+    text-align: center;
+    margin-top: 30px;
+    color: #4da8da;
+}
+.next:hover {
+    border-color: #EEFBFB;
 }

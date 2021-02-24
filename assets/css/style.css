@@ -65,11 +65,21 @@ section h2 {
 }
 .question h3 {
     width: 75%;
-    font-size: 130%;
+    font-size: 160%;
     padding-bottom: 5px;
     border-bottom: 3px solid;
     border-color: #203647;
     margin-bottom: 20px;
+}
+#button {
+    margin: 10px;
+    font-size: 115%;
+    background-color: #EEFBFB;
+    color: #12232E;
+}
+#button:hover {
+    background-color: #12232E;
+    color: #EEFBFB;
 }
 .next {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

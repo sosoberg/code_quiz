@@ -18,7 +18,10 @@ var question6 = document.querySelector('#question6');
 var questionHeader6 = document.querySelector('#questionheader6');
 var finishBtn = document.querySelector('#finish');
 var finishPage = document.querySelector('.finish');
-var restartBtn = document.querySelector('#restart')
+var restartBtn = document.querySelector('#restart');
+var correctAnswer = document.querySelector('.correct');
+var questionBtn = document.querySelector('#button');
+
 
 // event listeners to switch questions when user clicks next
 startButton.addEventListener('click', function(event) {
@@ -67,6 +70,7 @@ finishBtn.addEventListener('click', function(event) {
     question6.style.display = 'none';
     finishPage.style.display = 'block';
 });
+
 restartBtn.addEventListener('click', function(event) {
     finishPage.style.display = 'none';
     startButton.style.display = 'block';

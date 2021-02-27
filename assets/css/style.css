@@ -86,20 +86,27 @@ section h2 {
     background-color: #12232E;
     color: #EEFBFB;
 }
-.next {
+.timer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
-    text-align: center;
     font-size: 2vw;
-    background-color: #12232E;
-    border: 7px solid;
-    border-color: #12232E;
     text-align: center;
-    margin-top: 30px;
-    color: #4da8da;
+    margin: 30px;
+    color: #12232E;
+    width: 25%;
+    right: 200px;
+    top: 700px;
+    position: absolute;
+    display: none;
+    z-index: 1;
+
 }
-.next:hover {
-    border-color: #EEFBFB;
+.seconds {
+    background-color: #12232E;
+    margin: 6px;
+    color: #EEFBFB;
+    width: 100%;
+    padding: 9px;
 }
 .finish {
     display: none;
@@ -115,7 +122,7 @@ section h2 {
     text-align: center;
     font-size: 4.5vw;
 }
-.score h5 {
+.endtext h5 {
     margin: 20px 10px 10px 5px;
     text-align: center;
     font-size: 1.5vw;

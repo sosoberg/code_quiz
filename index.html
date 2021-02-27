@@ -13,30 +13,30 @@
         <header>
             <h1>Coding Quiz Challenge!</h1>
         </header>
+        <div class="timer">
+            <p>TIMER:<span class="seconds">60</span></p>
+        </div>
         <section>
-            <button id="start"class="start">START</button>
+            <button id="start" class="start">START</button>
 
-            <div class="timer">
-            </div>
-            
             <h2 id="questionheader1" class="questionheader">Question 1</h2>
             <div id="question1" class="question">
                 <h3>How many bananas fit inside a balloon?</h3>
                     <ol> 
                         <li>
-                        <button id="button">Too Many</button>
+                        <button id="button" class="incorrect">Too Many</button>
                         </li>
                         <li>
-                        <button id="button" class="correct">Too Few</button>
+                        <button id="button" class="correct1">Too Few</button>
                         </li>
                         <li>
-                        <button id="button">Just Enough</button>
+                        <button id="button" class="incorrect">Just Enough</button>
                         </li>
                         <li>
-                        <button id="button">F@#$ If I Know</button>
+                        <button id="button" class="incorrect">F@#$ If I Know</button>
                         </li>
                     </ol>
-                    <button id="next1" class="next">NEXT</button>
+                 <!-- insert timer div here instead-->
             </div>
 
             <h2 id="questionheader2" class="questionheader">Question 2</h2>
@@ -44,19 +44,19 @@
                 <h3>Are there titans on titan?</h3>
                     <ol>
                         <li>
-                        <button id="button">Thanos</button>
+                        <button id="button" class="incorrect">Thanos</button>
                         </li>
                         <li>
-                        <button id="button">Barb and Thanos</button>
+                        <button id="button" class="incorrect">Barb and Thanos</button>
                         </li>
                         <li>
-                        <button id="button" class="correct">55</button>
+                        <button id="button" class="correct2">55</button>
                         </li>
                         <li>
-                        <button id="button">As many as there are... bunnies?</button>
+                        <button id="button" class="incorrect">As many as there are... bunnies?</button>
                         </li>
                     </ol>
-                    <button id="next2" class="next">NEXT</button>
+                   
             </div>
 
             <h2 id="questionheader3" class="questionheader">Question 3</h2>
@@ -64,19 +64,19 @@
                 <h3>Is the world round or just wrong?</h3>
                     <ol>
                         <li>
-                        <button id="button">Wrong</button>
+                        <button id="button" class="incorrect">Wrong</button>
                         </li>
                         <li>
-                        <button id="button" class="correct">Round</button>
+                        <button id="button" class="correct3">Round</button>
                         </li>
                         <li>
-                        <button id="button">Sideways</button>
+                        <button id="button" class="incorrect">Sideways</button>
                         </li>
                         <li>
-                        <button id="button">Horizontal</button>
+                        <button id="button" class="incorrect">Horizontal</button>
                         </li>
                     </ol>
-                    <button id="next3" class="next">NEXT</button>
+                
             </div>
 
             <h2 id="questionheader4" class="questionheader">Question 4</h2>
@@ -84,19 +84,19 @@
                 <h3>What is your favorite food if it was inedible?</h3>
                     <ol>
                         <li>
-                        <button id="button">Poison</button>
+                        <button id="button" class="incorrect">Poison</button>
                         </li>
                         <li>
-                        <button id="button">Peanut Allergy</button>
+                        <button id="button" class="incorrect">Peanut Allergy</button>
                         </li>
                         <li>
-                        <button id="button">Broken Promises</button>
+                        <button id="button" class="incorrect">Broken Promises</button>
                         </li>
                         <li>
-                        <button id="button" class="correct">Blueberries</button>
+                        <button id="button" class="correct4">Blueberries</button>
                         </li>
                     </ol>
-                    <button id="next4" class="next">NEXT</button>
+                
             </div>
 
             <h2 id="questionheader5" class="questionheader">Question 5</h2>
@@ -104,19 +104,19 @@
                 <h3>How many questions are there in the world?</h3>
                     <ol>
                         <li>
-                        <button id="button">53</button>
+                        <button id="button" class="incorrect">53</button>
                         </li>
                         <li>
-                        <button id="button">69 'heh'</button>
+                        <button id="button" class="incorrect">69 'heh'</button>
                         </li>
                         <li>
-                        <button id="button">None</button>
+                        <button id="button" class="correct5">None</button>
                         </li>
                         <li>
-                        <button id="button">What is a question?</button>
+                        <button id="button" class="incorrect">What is a question?</button>
                         </li>
                     </ol>
-                    <button id="next5" class="next">NEXT</button>
+                  
             </div>
 
             <h2 id="questionheader6" class="questionheader">Question 6</h2>
@@ -124,30 +124,30 @@
                 <h3>What is your favorite ROUND pizza?</h3>
                     <ol>
                         <li>
-                        <button id="button">The Square One</button>
+                        <button id="button" class="correct6">The Square One</button>
                         </li>
                         <li>
-                        <button id="button">Chicago's Fake S#$%</button>
+                        <button id="button" class="incorrect">Chicago's Fake S#$%</button>
                         </li>
                         <li>
-                        <button id="button">New York When It Is Raining</button>
+                        <button id="button" class="incorrect">New York When It Is Raining</button>
                         </li>
                         <li>
-                        <button id="button">Soggy But With Bell Peppers</button>
+                        <button id="button" class="incorrect">Soggy But With Bell Peppers</button>
                         </li>
                     </ol>
-                    <button id="finish" class="next">FINISH</button>
+                  
             </div>
             <div class="finish">
                 <h4>Quiz Complete!</h4>
-                    <div class="score">
+                    <div class="endtext">
                         <h5>Highest Score</h5>
                         <div class="names">
                             <p class="name">
                             Name:______
                             </p>
-                            <p="score">
-                            Score:______
+                            <p>
+                            Score: <span class="score">0</span>
                             </p>
                             <button id="restart" class="restart">Try Again!</button>
                         <div>

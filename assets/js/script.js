@@ -26,7 +26,6 @@ var incorrectAnswer = document.querySelector('.incorrect');
 var timerElement = document.querySelector('.timer');
 var finalScore = document.querySelector('.score');
 
-finalScore.textContent = timerCount;
 
 var timerSeconds = document.querySelector('.seconds');
 var timerCount = '60';
@@ -48,10 +47,10 @@ function startTimer() {
             question6.style.display = 'none';
             timerElement.style.display = 'none';
             questionHdr.style.display = 'none';
+            finalScore.textContent = '0';
         }
     }, 1000); //repeats every second
 };
-
 
 
 // incorrect answer function
@@ -68,7 +67,7 @@ startButton.addEventListener('click', function(event) {
     question1.style.display = 'block';
     questionHeader1.style.display = 'block';
     timerElement.style.display = 'block';
-    startTimer()
+    startTimer();
 });
 
 correctAnswer1.addEventListener('click', function(event) {
@@ -106,11 +105,13 @@ correctAnswer5.addEventListener('click', function(event) {
     question6.style.display = 'block';
 });
 
-var endGame = correctAnswer6.addEventListener('click', function(event) {
+correctAnswer6.addEventListener('click', function(event) {
     questionHeader6.style.display = 'none';
     question6.style.display = 'none';
     finishPage.style.display = 'block';
     clearInterval(timer);
+    //set player score to timerCount, which is their score total
+    finalScore.textContent = timerCount;
     timerElement.style.display = 'none';
 });
 

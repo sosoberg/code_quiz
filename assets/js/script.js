@@ -21,7 +21,7 @@ var finishPage = document.querySelector('.finish');
 var restartBtn = document.querySelector('#restart');
 var correctAnswer = document.querySelector('.correct');
 var questionBtn = document.querySelector('#button');
-
+var timerElement = document.querySelector('.timer');
 
 // event listeners to switch questions when user clicks next
 startButton.addEventListener('click', function(event) {
@@ -65,7 +65,7 @@ next5.addEventListener('click', function(event) {
     question6.style.display = 'block';
 });
 
-finishBtn.addEventListener('click', function(event) {
+var endGame = finishBtn.addEventListener('click', function(event) {
     questionHeader6.style.display = 'none';
     question6.style.display = 'none';
     finishPage.style.display = 'block';
@@ -75,3 +75,20 @@ restartBtn.addEventListener('click', function(event) {
     finishPage.style.display = 'none';
     startButton.style.display = 'block';
 });
+
+function outOfTime () {
+    finishPage.style.display = 'block';
+}
+
+function startTimer() {
+    timer = setInterval(function() {
+        timerCount--;
+        timerElement.textContent = timerCount;
+        if (timerCount >= 0) {
+            if (endGame && timerCount >0) {
+                clearInterval(timer);
+                outOfTime();
+            }
+        }
+    });
+}

@@ -1,31 +1,38 @@
 //nav query selectors
 var startButton = document.querySelector('#start');
+
 var question1 = document.querySelector('#question1');
-var questionHeader1 = document.querySelector('#questionheader1');
 var question2 = document.querySelector('#question2');
-var questionHeader2 = document.querySelector('#questionheader2');
 var question3 = document.querySelector('#question3');
-var questionHeader3 = document.querySelector('#questionheader3');
 var question4 = document.querySelector('#question4');
-var questionHeader4 = document.querySelector('#questionheader4');
 var question5 = document.querySelector('#question5');
-var questionHeader5 = document.querySelector('#questionheader5');
 var question6 = document.querySelector('#question6');
+
+var questionHeader1 = document.querySelector('#questionheader1');
+var questionHeader2 = document.querySelector('#questionheader2');
+var questionHeader3 = document.querySelector('#questionheader3');
+var questionHeader4 = document.querySelector('#questionheader4');
+var questionHeader5 = document.querySelector('#questionheader5');
 var questionHeader6 = document.querySelector('#questionheader6');
+
+
 var finishPage = document.querySelector('.finish');
 var restartBtn = document.querySelector('#restart');
 var questionBtn = document.querySelector('#button');
 var questionHdr = document.querySelector('.questionheader');
+
 var correctAnswer1 = document.querySelector('.correct1');
 var correctAnswer2 = document.querySelector('.correct2');
 var correctAnswer3 = document.querySelector('.correct3');
 var correctAnswer4 = document.querySelector('.correct4');
 var correctAnswer5 = document.querySelector('.correct5');
 var correctAnswer6 = document.querySelector('.correct6');
-var incorrectAnswer = document.querySelectorAll('.incorrect');
+
+var incorrectAnswer = document.querySelector('.incorrect');
 var timerElement = document.querySelector('.timer');
 var finalScore = document.querySelector('.score');
-
+var nameInput = document.querySelector('.nameinput');
+var highScore = document.querySelector('.highscore');
 
 var timerSeconds = document.querySelector('.seconds');
 var timerCount = '60';
@@ -108,11 +115,29 @@ correctAnswer5.addEventListener('click', function(event) {
 correctAnswer6.addEventListener('click', function(event) {
     questionHeader6.style.display = 'none';
     question6.style.display = 'none';
+    //prompt for users initials
+    var userInitials = window.prompt('Please enter a 3 character initial for our records');
+    if (userInitials.length !== 3) {
+        var retry = window.prompt('try again - three characters only please');
+        // return John Doe default if user fails to input initials
+        if (retry.length !== 3) {
+            userInitials = 'John Doe'
+        } else {
+            userInitials = retry;
+        }
+    }
     finishPage.style.display = 'block';
     clearInterval(timer);
     //set player score to timerCount, which is their score
     finalScore.textContent = timerCount;
+    nameInput.textContent = userInitials;
     timerElement.style.display = 'none';
+    getHighScore();
+    function storeScore() {
+        localStorage.setItem("initial", userInitials);
+        localStorage.setItem("score", timerCount);
+    }
+    storeScore();
 });
 
 //option to restart the quiz if the user wants a better score
@@ -122,3 +147,15 @@ restartBtn.addEventListener('click', function(event) {
     timerCount = '60';
 });
 
+
+
+function getHighScore() {
+    var stored = localStorage.getItem("highscore");
+    if (stored > timerCount) {
+        highScore.textContent = stored; 
+    } else {
+        localStorage.setItem("highscore", timerCount);
+        var stored = localStorage.getItem("highscore");
+        highScore.textContent = stored;
+    }
+};

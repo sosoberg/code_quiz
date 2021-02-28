@@ -108,6 +108,20 @@ section h2 {
     width: 100%;
     padding: 9px;
 }
+.initials {
+    display: none;
+    border: 15px solid;
+    border-color: #EEFBFB;
+    background-color: #4da8da;
+    padding: 60px 60px 60px 60px;
+    margin: 60px 60px 60px 60px;
+    width: 75%;
+    background-color: #4da8da;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 5vw; 
+}
 .finish {
     display: none;
     border: 15px solid;
@@ -132,7 +146,7 @@ section h2 {
     border: 2px solid;
 }
 .names p {
-    padding: 20px;
+    padding: 7px;
 }
 .restart {
     background-color: #4da8da;

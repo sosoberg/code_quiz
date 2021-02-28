@@ -22,7 +22,7 @@ var correctAnswer3 = document.querySelector('.correct3');
 var correctAnswer4 = document.querySelector('.correct4');
 var correctAnswer5 = document.querySelector('.correct5');
 var correctAnswer6 = document.querySelector('.correct6');
-var incorrectAnswer = document.querySelector('.incorrect');
+var incorrectAnswer = document.querySelectorAll('.incorrect');
 var timerElement = document.querySelector('.timer');
 var finalScore = document.querySelector('.score');
 
@@ -110,11 +110,12 @@ correctAnswer6.addEventListener('click', function(event) {
     question6.style.display = 'none';
     finishPage.style.display = 'block';
     clearInterval(timer);
-    //set player score to timerCount, which is their score total
+    //set player score to timerCount, which is their score
     finalScore.textContent = timerCount;
     timerElement.style.display = 'none';
 });
 
+//option to restart the quiz if the user wants a better score
 restartBtn.addEventListener('click', function(event) {
     finishPage.style.display = 'none';
     startButton.style.display = 'block';

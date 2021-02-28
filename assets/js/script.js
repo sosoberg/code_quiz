@@ -54,8 +54,28 @@ function startTimer() {
             timerElement.style.display = 'none';
             questionHdr.style.display = 'none';
             finalScore.textContent = '0';
+            //get highscore and place it in the final page
             getHighScore();
-        }
+            //ask for player name
+            var userInitials = window.prompt('Please enter your name for our records');
+            if (userInitials.length > 30) {
+                var retry = window.prompt('below 30 characters please');
+                // return John Doe default if user fails to input initials
+                if (retry.length > 30) {
+                    userInitials = 'John Doe'
+                } else {
+                    userInitials = retry;
+                };
+            };
+            finalScore.textContent = timerCount;
+            nameInput.textContent = userInitials;
+            timerElement.style.display = 'none';
+            //store players scores locally
+            function storeScore() {
+                localStorage.setItem(userInitials, timerCount);
+            };
+            storeScore();
+        };
     }, 1000); //repeats every second
 };
 

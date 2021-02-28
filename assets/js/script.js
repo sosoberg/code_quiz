@@ -28,12 +28,11 @@ var correctAnswer4 = document.querySelector('.correct4');
 var correctAnswer5 = document.querySelector('.correct5');
 var correctAnswer6 = document.querySelector('.correct6');
 
-var incorrectAnswer = document.querySelector('.incorrect');
+var incorrectAnswer = document.getElementsByClassName('incorrect');
 var timerElement = document.querySelector('.timer');
 var finalScore = document.querySelector('.score');
 var nameInput = document.querySelector('.nameinput');
 var highScore = document.querySelector('.highscore');
-
 var timerSeconds = document.querySelector('.seconds');
 var timerCount = '60';
 var timer;
@@ -55,18 +54,19 @@ function startTimer() {
             timerElement.style.display = 'none';
             questionHdr.style.display = 'none';
             finalScore.textContent = '0';
+            getHighScore();
         }
     }, 1000); //repeats every second
 };
 
 
 // incorrect answer function
-incorrectAnswer.addEventListener('click', function(event) {
-    incorrectAnswer.style.border = "thick solid red";
-    // take ten seconds off timer
-    timerCount = timerCount -10;
-    // make it so that you can be wrong multiple times
-});
+
+for (let i = 0; i < incorrectAnswer.length; i++) {
+    incorrectAnswer[i].addEventListener('click', function() {
+        timerCount = timerCount -10;
+    })
+};
 
 // event listeners to switch questions when user clicks next
 startButton.addEventListener('click', function(event) {
@@ -74,12 +74,14 @@ startButton.addEventListener('click', function(event) {
     question1.style.display = 'block';
     questionHeader1.style.display = 'block';
     timerElement.style.display = 'block';
+    //start the quiz timer when start button is pressed
     startTimer();
 });
 
 correctAnswer1.addEventListener('click', function(event) {
     question1.style.display = 'none';
     questionHeader1.style.display = 'none';
+    //move to next question block
     questionHeader2.style.display = 'block';
     question2.style.display = 'block';
 });
@@ -116,11 +118,11 @@ correctAnswer6.addEventListener('click', function(event) {
     questionHeader6.style.display = 'none';
     question6.style.display = 'none';
     //prompt for users initials
-    var userInitials = window.prompt('Please enter a 3 character initial for our records');
-    if (userInitials.length !== 3) {
-        var retry = window.prompt('try again - three characters only please');
+    var userInitials = window.prompt('Please enter your name for our records');
+    if (userInitials.length > 30) {
+        var retry = window.prompt('below 30 characters please');
         // return John Doe default if user fails to input initials
-        if (retry.length !== 3) {
+        if (retry.length > 30) {
             userInitials = 'John Doe'
         } else {
             userInitials = retry;
@@ -134,8 +136,7 @@ correctAnswer6.addEventListener('click', function(event) {
     timerElement.style.display = 'none';
     getHighScore();
     function storeScore() {
-        localStorage.setItem("initial", userInitials);
-        localStorage.setItem("score", timerCount);
+        localStorage.setItem(userInitials, timerCount);
     }
     storeScore();
 });
@@ -148,7 +149,7 @@ restartBtn.addEventListener('click', function(event) {
 });
 
 
-
+// sets highscore if highscore is achieved, otherwise it gets from local storage
 function getHighScore() {
     var stored = localStorage.getItem("highscore");
     if (stored > timerCount) {

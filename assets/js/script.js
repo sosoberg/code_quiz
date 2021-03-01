@@ -14,12 +14,12 @@ var questionHeader3 = document.querySelector('#questionheader3');
 var questionHeader4 = document.querySelector('#questionheader4');
 var questionHeader5 = document.querySelector('#questionheader5');
 var questionHeader6 = document.querySelector('#questionheader6');
-
+var questionHdr = document.querySelector('.questionheader');
 
 var finishPage = document.querySelector('.finish');
 var restartBtn = document.querySelector('#restart');
 var questionBtn = document.querySelector('#button');
-var questionHdr = document.querySelector('.questionheader');
+
 
 var correctAnswer1 = document.querySelector('.correct1');
 var correctAnswer2 = document.querySelector('.correct2');
@@ -44,6 +44,8 @@ function startTimer() {
         timerSeconds.textContent = timerCount;
         if (timerCount <= 0) {
             clearInterval(timer);
+            //make sure it doesnt show negative scores
+            timerCount = 0;
             finishPage.style.display = 'block';
             question1.style.display = 'none';
             question2.style.display = 'none';
@@ -85,7 +87,7 @@ function startTimer() {
 for (let i = 0; i < incorrectAnswer.length; i++) {
     incorrectAnswer[i].addEventListener('click', function() {
         timerCount = timerCount -10;
-    })
+    });
 };
 
 // event listeners to switch questions when user clicks next
@@ -143,11 +145,11 @@ correctAnswer6.addEventListener('click', function(event) {
         var retry = window.prompt('below 30 characters please');
         // return John Doe default if user fails to input initials
         if (retry.length > 30) {
-            userInitials = 'John Doe'
+            userInitials = 'John Doe';
         } else {
             userInitials = retry;
-        }
-    }
+        };
+    };
     finishPage.style.display = 'block';
     clearInterval(timer);
     //set player score to timerCount, which is their score
@@ -157,7 +159,7 @@ correctAnswer6.addEventListener('click', function(event) {
     getHighScore();
     function storeScore() {
         localStorage.setItem(userInitials, timerCount);
-    }
+    };
     storeScore();
 });
 
@@ -178,5 +180,5 @@ function getHighScore() {
         localStorage.setItem("highscore", timerCount);
         var stored = localStorage.getItem("highscore");
         highScore.textContent = stored;
-    }
+    };
 };

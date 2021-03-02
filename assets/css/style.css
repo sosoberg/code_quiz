@@ -51,6 +51,18 @@ section h2 {
     border-color: #12232E;
     color: #EEFBFB;
 }
+.instructions {
+    font-size: 0.5vw;
+    background-color: #12232E;
+    color: #EEFBFB;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid;
+    border-color: #EEFBFB;
+}
 .questionheader {
     display: none;
 }

@@ -9,7 +9,7 @@ The is a quick Javascript/Coding Quiz with just 6 questions to test your profici
 
 Here is a screenshot of the beginning of the quiz
 
-![alt text](assets/images/project.jpeg "Screen Shot of the Finished website")
+![alt text](assets/Images/project.jpeg "Screen Shot of the Finished website")
 
 Link to the quiz!
 <https://sosoberg.github.io/code_quiz/>
